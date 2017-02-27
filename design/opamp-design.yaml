@@ -15,9 +15,9 @@ platforms:
         search-retry-dir: /mnt/retry/opamp/search/
         antenna-retry-dir: /mnt/retry/opamp/antenna/
         deploycontext: opamp
-        notifypass: '::ENCRYPTED::'
+        notifypass: '12345'
         version: $OO_GLOBAL{VERSION}
-        notifypass: '::ENCRYPTED::'
+        notifypass: '12345'
         ecv-user: $OO_GLOBAL{ECV-USER}
         ecv-secret: $OO_GLOBAL{ECV-USER}
         tomcatloglocation: $OO_GLOBAL{TOMCATLOGLOCATION}
@@ -148,7 +148,7 @@ platforms:
              cms-cert:
                path: /tmp/download_file
                headers: ''
-               basic_auth_password: '::ENCRYPTED::'
+               basic_auth_password: '12345'
                exec_cmd: |
                     CERT_FILE=$OO_LOCAL{cms-des-file-location}
                     CERT_DIR=$OO_LOCAL{install-dir}/certs/
@@ -169,7 +169,7 @@ platforms:
        artifact/oneops.1.Artifact:
          app:
            install_dir: /opt/oneops/artifact
-           password: '::ENCRYPTED::'
+           password: '12345'
            restart: |
                  node.set["oneops"] = {
                              :home => "/usr/local/oneops",
@@ -222,7 +222,7 @@ platforms:
              disableECV:
                path: /tmp/download_file
                headers: ''
-               basic_auth_password: '::ENCRYPTED::'
+               basic_auth_password: '12345'
                basic_auth_user: ''
                exec_cmd: curl -v  -u $OO_LOCAL{ecv-user}:$OO_LOCAL{ecv-secret} -X
                  PUT  http://localhost:8080/$OO_LOCAL{deploycontext}/rest/ecv/status/offline
@@ -234,7 +234,7 @@ platforms:
              enableECV:
                headers: ''
                path: /tmp/download_file
-               basic_auth_password: '::ENCRYPTED::'
+               basic_auth_password: '12345'
                exec_cmd: curl -v  -u $OO_LOCAL{ecv-user}:$OO_LOCAL{ecv-secret} -X
                  PUT  http://localhost:8080/$OO_LOCAL{deploycontext}/rest/ecv/status/online
                basic_auth_user: ''
@@ -245,7 +245,7 @@ platforms:
                run_on: on-demand
        keystore/oneops.1.Keystore:
          keystore:
-           keystore_password: '::ENCRYPTED::'
+           keystore_password: '12345'
            keystore_filename: /var/lib/certs/keystore.jks
        certificate/oneops.1.Certificate:
          certificate: {}

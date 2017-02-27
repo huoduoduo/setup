@@ -9,7 +9,7 @@ platforms:
     major_version: 1
 
     variables:
-        amqpass: '::ENCRYPTED::'
+        amqpass: '12345'
     components:
       secgroup/oneops.1.Secgroup:
         secgroup:

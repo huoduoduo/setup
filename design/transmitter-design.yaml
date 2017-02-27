@@ -14,7 +14,7 @@ platforms:
      variables:
         antenna-retry-dir: /mnt/retry/transmitter/antenna/
         deploycontext: transmitter
-        notifypass: '::ENCRYPTED::'
+        notifypass: '12345'
         search-retry-dir: /mnt/retry/transmitter/search/
         version: $OO_GLOBAL{VERSION}
         ecv-user: $OO_GLOBAL{ECV-USER}
@@ -148,7 +148,7 @@ platforms:
              cms-cert:
                path: /tmp/download_file
                headers: ''
-               basic_auth_password: '::ENCRYPTED::'
+               basic_auth_password: '12345'
                exec_cmd: |
                     CERT_FILE=$OO_LOCAL{cms-des-file-location}
                     CERT_DIR=$OO_LOCAL{install-dir}/certs/
@@ -169,7 +169,7 @@ platforms:
        artifact/oneops.1.Artifact:
          app:
            install_dir: /opt/oneops/artifact
-           password: '::ENCRYPTED::'
+           password: '12345'
            restart: |
                  node.set["oneops"] = {
                              :home => "/usr/local/oneops",
@@ -228,7 +228,7 @@ platforms:
                basic_auth_user: ''
                exec_cmd: curl -v  -u $OO_LOCAL{ecv-user}:$OO_LOCAL{ecv-secret} -X
                  PUT  http://localhost:8080/$OO_LOCAL{deploycontext}/rest/ecv/status/offline
-               basic_auth_password: '::ENCRYPTED::'
+               basic_auth_password: '12345'
                checksum: ''
                source: ''
                priority: '1'
@@ -240,7 +240,7 @@ platforms:
                basic_auth_user: ''
                exec_cmd: curl -v  -u $OO_LOCAL{ecv-user}:$OO_LOCAL{ecv-secret} -X
                  PUT  http://localhost:8080/$OO_LOCAL{deploycontext}/rest/ecv/status/online
-               basic_auth_password: '::ENCRYPTED::'
+               basic_auth_password: '12345'
                checksum: ''
                source: ''
                priority: '1'
@@ -248,7 +248,7 @@ platforms:
                run_on: on-demand
        keystore/oneops.1.Keystore:
          keystore:
-           keystore_password: '::ENCRYPTED::'
+           keystore_password: '12345'
            keystore_filename: /var/lib/certs/keystore.jks
        certificate/oneops.1.Certificate:
          certificate: {}

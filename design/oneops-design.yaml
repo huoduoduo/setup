@@ -1,45 +1,45 @@
 import:
-- https://raw.githubusercontent.com/oneops/setup/master/design/adapter-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/admin-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/wire-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/antenna-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/cmsdb-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/activitidb-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/controller-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/daq-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/display-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/opamp-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/opsmq-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/search-logs-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/search-reports-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/searchdb-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/searchmq-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/sensor-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/transistor-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/transmitter-design.yaml
-- https://raw.githubusercontent.com/oneops/setup/master/design/batch-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/adapter-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/admin-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/wire-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/antenna-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/cmsdb-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/activitidb-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/controller-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/daq-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/display-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/opamp-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/opsmq-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/search-logs-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/search-reports-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/searchdb-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/searchmq-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/sensor-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/transistor-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/transmitter-design.yaml
+- https://raw.githubusercontent.com/huoduoduo/setup/master/design/batch-design.yaml
 
 variables:
-  DISTBASE: '*change me*'
-  CMS-DB-PASS: '::ENCRYPTED::'
-  AMQPASS: '::ENCRYPTED::'
-  DOMAIN: '**changeme**'
-  ECV-SECRET: '::ENCRYPTED::'
+  DISTBASE: 'http://store.oneops.walmart.com/share/release/'
+  CMS-DB-PASS: '12345'
+  AMQPASS: '12345'
+  DOMAIN: 'dev-1502.activemq.platform.prod.walmart.com'
+  ECV-SECRET: '12345'
   DATA-RETRY-DIR: /mnt/retry/
   API-USER: 'oneopsapi'
-  API-SECRET: '::ENCRYPTED::'
+  API-SECRET: '12345'
   TOMCATGCLOG: /log/tomcat/gc-tomcat7.log
   INSTALL-DIR: /usr/local/oneops
   CMS-DB-HOST: 'cmsdb.$OO_GLOBAL{DOMAIN}'
   TOMCATLOGLOCATION: /log/tomcat
-  DOMAIN-ALIAS: '**changeme**'
+  DOMAIN-ALIAS: 'dev.oneops.walmart.com'
   TOMCAT-ACCESS-LOG-FORMAT: '%h %{X-Cms-User}i %{X-Cms-Scope}i %{NSC-Client-IP}i %l%u %t &quot;%r&quot; %s %b %D %F'
-  CMS-DB-DES-KEY: '::ENCRYPTED::'
+  CMS-DB-DES-KEY: '3ff9ca7a1df6e901bdcb59daf3a1af4f54779518bd5f4e55'
   TOMCATHEAPDUMPPATH: /mnt/cms_heapdump.hprof
   ECV-USER: 'oneopsecv'
   CMS-DB-USER: 'oneopscms'
   CMS-DES-FILE-LOCATION: /usr/local/oneops/certs/oo.key
-  SEARCH-AMQ-PASS: '::ENCRYPTED::'
+  SEARCH-AMQ-PASS: '12345'
   SEARCH-AMQ-USER: 'oneopssearchmq'
   SEARCH-AMQ-HOST: 'searchmq.$OO_GLOBAL{DOMAIN}'
   VERSION: 16.06.24-RC1
@@ -48,8 +48,8 @@ variables:
   AMQUSER: 'superuser'
   WIRE-DB-NAME: 'wiredb'
   WIRE-DB-USER: 'wiredb'
-  WIRE-DB-PASS: '::ENCRYPTED::'
-  ACTIVITI-DB-PASS: '::ENCRYPTED::'
+  WIRE-DB-PASS: '12345'
+  ACTIVITI-DB-PASS: '12345'
   ACTIVITI-DB-USER: 'activiti'
   ACTIVITI-DB-HOST: 'activitidb.$OO_GLOBAL{DOMAIN}'
   ACTIVITI-DB-NAME: 'activitidb'
@@ -57,11 +57,11 @@ variables:
   SENSOR-POOL-SIZE : '1'
   DISPLAY-DB-NAME: display
   DISPLAY-DB-USERNAME: display
-  DISPLAY-DB-PASSWORD: '::ENCRYPTED::'
+  DISPLAY-DB-PASSWORD: '12345'
   DISPLAY-RAILS-ENV: enterprise
   SEARCHMQ-DB-NAME: searchmq
   SEARCHMQ-DB-USER: searchmq
-  SEARCHMQ-DB-PASSWORD: '::ENCRYPTED::'
+  SEARCHMQ-DB-PASSWORD: '12345'
 
 
 
