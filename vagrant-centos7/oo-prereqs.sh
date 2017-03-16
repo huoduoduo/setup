@@ -230,9 +230,9 @@ echo "OO install logstash"
 
 echo "[logstash-1.5]
 name=Logstash repository for 1.5.x packages
-baseurl=http://packages.elastic.co/logstash/1.5/centos
+baseurl=https://packages.elastic.co/logstash/1.5/centos
 gpgcheck=1
-gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
 enabled=1" > /etc/yum.repos.d/logstash.repo
 
 yum -y install logstash
