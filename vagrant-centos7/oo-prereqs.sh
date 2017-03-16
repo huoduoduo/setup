@@ -4,6 +4,7 @@ now=$(date +"%T")
 echo "Starting at : $now"
 
 export VAGRANT_MNT="/vagrant"
+mkdir /vagrant
 
 echo '127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 search api antenna opsmq daq opsdb sysdb kloopzappdb kloopzcmsdb cmsapi sensor activitidb kloopzmq searchmq' > /etc/hosts
 echo '::1         localhost localhost.localdomain localhost6 localhost6.localdomain6' >> /etc/hosts
@@ -22,7 +23,8 @@ systemctl start ntpd
 
 # postgres
 echo "OO install postgres 9.2"
-yum -y install http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-8.noarch.rpm
+# yum -y install http://yum.postgresql.org/9.2/redhat/rhel-6-x86_64/pgdg-centos92-9.2-8.noarch.rpm
+ yum-config-manager --add-repo https://download.postgresql.org/pub/repos/yum/9.2/redhat/rhel-7-x86_64 ; echo gpgcheck=0 >> /etc/yum.repos.d/*postgresql.org_pub_repos_yum_9.2_redhat_rhel-7-x86_64.repo
 yum -y install postgresql92-server postgresql92-contrib
 yum -y install postgresql-devel
 
@@ -41,7 +43,7 @@ systemctl start postgresql-9.2
 echo "OO done with postgres"
 
 apache_mirror="http://www.us.apache.org/dist"
-apache_archive="http://archive.apache.org/dist"
+apache_archive="https://archive.apache.org/dist"
 
 amq_version="5.10.2"
 echo "OO install activemq $amq_version"
