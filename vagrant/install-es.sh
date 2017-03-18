@@ -1,15 +1,15 @@
 #!/bin/sh
 
-export VAGRANT_MNT="/vagrant"
+export VAGRANT_MNT=$(pwd)
 
 echo "OO install elasticsearch"
 rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
 
 echo "[elasticsearch-1.7]
 name=Elasticsearch repository for 1.7.x packages
-baseurl=http://packages.elastic.co/elasticsearch/1.7/centos
+baseurl=https://packages.elastic.co/elasticsearch/1.7/centos
 gpgcheck=1
-gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+gpgkey=https://packages.elastic.co/GPG-KEY-elasticsearch
 enabled=1" > /etc/yum.repos.d/elasticsearch.repo
 yum -y install elasticsearch
 
