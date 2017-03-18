@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export VAGRANT_MNT="/vagrant"
+export VAGRANT_MNT=$(pwd)
 
 source /usr/local/rvm/scripts/rvm
 rvm use --default --install 2.0.0
