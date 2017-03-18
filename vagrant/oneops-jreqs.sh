@@ -3,7 +3,7 @@
 now=$(date +"%T")
 echo "Starting at : $now"
 
-export VAGRANT_MNT="/vagrant"
+export VAGRANT_MNT=$(pwd)
 
 echo '127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4 search api antenna opsmq daq opsdb sysdb kloopzappdb kloopzcmsdb cmsapi sensor activitidb kloopzmq searchmq' > /etc/hosts
 echo '::1         localhost localhost.localdomain localhost6 localhost6.localdomain6' >> /etc/hosts
@@ -37,7 +37,7 @@ service postgresql-9.2 start
 echo "OO done with postgres"
 
 apache_mirror="http://www.us.apache.org/dist"
-apache_archive="http://archive.apache.org/dist"
+apache_archive="https://archive.apache.org/dist"
 
 amq_version="5.10.2"
 echo "OO install activemq $amq_version"
